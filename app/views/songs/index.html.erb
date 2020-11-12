@@ -1,5 +1,14 @@
+<% if flash[:alert] %>
+<% flash.each do |message| %>
+<%= message %>
+<% end %>
+<% end %>
+
+<%= flash[:alert] %>
+
 <ul>
 <% @songs.each do |song| %>
+
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
 <% end %>
 </ul>
